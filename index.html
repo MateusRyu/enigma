@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Enigma</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <section id="one">
+            <p>
+                O mês que deu início a <strong>"minha primavera"</strong>?
+            </p>
+            <input type="text" id="pass" placeholder="Escreva sua resposta aqui..." oninput="verify('setembro')" />
+        </section>
+        <section id="two" class="hidden">
+            <div class="circle-wrapper">
+                <p id="cipher">setembro</p>
+                <div id="shiftSlot"></div>
+                <svg id="rotatable-svg" viewBox="0 0 100 100">
+                    <defs>
+                        <path id="circle" d="
+        M 50, 50
+        m -37, 0
+        a 37,37 0 1,1 74,0
+        a 37,37 0 1,1 -74,0" />
+                    </defs>
+                    <text>
+                        <textPath xlink:href="#circle">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            <div class="center">
+                <button onclick="rotateLeft()">&#x21BA;</button>
+                <button onclick="rotateRight()">&#x21BB;</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
