@@ -50,8 +50,10 @@ input:focus {
 }
 
 #cipher {
+    display: block;
     text-align: center;
     text-transform: uppercase;
+    margin: 1rem;
 }
 
 .center {
@@ -87,6 +89,28 @@ text {
     border-right: 50px solid transparent;
     border-top: 100px solid yellow; 
 }
+
+button {
+    border-radius: 10px;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: inherit; 
+    color: white; 
+    border: 2px solid yellow;
+    margin: .5rem;
+}
+  
+button:hover {
+    background-color: yellow;
+    color: black;
+  }
 
 .hidden {
     display: none;

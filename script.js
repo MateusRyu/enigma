@@ -17,6 +17,7 @@ let currentRotation = 80;
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const input = document.getElementById('cipher').textContent.toUpperCase();
 
+
 function normalizeShift(shift) {
     if (shift < 26) {
         return shift;
@@ -46,10 +47,28 @@ function decipher() {
     document.getElementById('cipher').textContent = output;
 }
 
+function changeOutputTag(tag) {
+    let output = document.getElementById("cipher");
+    let element = document.createElement(tag);
+
+    element.innerHTML = output.innerHTML;
+    element.id = "cipher";
+    if (tag == "a") {
+        element.href = "https://x.com/AchasteAlgo?s=20";
+        element.target = "_blank"; 
+    }
+    output.parentNode.replaceChild(element, output);
+}
+
 
 function updateRotation() {
     currentRotation = 80 + step * (360 / 26);
     svg.style.transform = `rotate(${currentRotation}deg)`;
+    if (step == 5) {
+        changeOutputTag("a");
+    } else if (step == 4 || step == 6) {
+        changeOutputTag("p");
+    }
     decipher()
 }
 
